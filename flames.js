@@ -1,6 +1,6 @@
 /* Code Written By Shreyan Nag */
 	// Your web app's Firebase configuration
-	var firebaseConfig = {
+	/*var firebaseConfig = {
 		apiKey: "AIzaSyAP-vr6NqQa24Tepu4DvE8IfweqvTcrD2o",
 		authDomain: "flames-26070.firebaseapp.com",
 		databaseURL: "https://flames-26070.firebaseio.com",
@@ -11,7 +11,7 @@
 	  };
 	  // Initialize Firebase
 	  firebase.initializeApp(firebaseConfig);
-
+*/
 //flames logic
 function flames() {
  var fname=document.getElementById("name1").value;
@@ -79,7 +79,9 @@ function flames() {
 				result = "SISTER";
 			break;
 	}
+
 	 //firebase function
+	 /*
 	 function writeData(fname,sname,result){
 		firebase.database().ref('lovers/').push({
 			firstname: fname,
@@ -88,6 +90,7 @@ function flames() {
 		});
 	}
 	writeData(fname,sname,result);
+	*/
 }
 
 //Reload function
