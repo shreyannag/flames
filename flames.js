@@ -1,97 +1,68 @@
 /* Code Written By Shreyan Nag */
-	// Your web app's Firebase configuration
-	/*var firebaseConfig = {
-		apiKey: "AIzaSyAP-vr6NqQa24Tepu4DvE8IfweqvTcrD2o",
-		authDomain: "flames-26070.firebaseapp.com",
-		databaseURL: "https://flames-26070.firebaseio.com",
-		projectId: "flames-26070",
-		storageBucket: "",
-		messagingSenderId: "936402815977",
-		appId: "1:936402815977:web:20471dedfc5364237c9978"
-	  };
-	  // Initialize Firebase
-	  firebase.initializeApp(firebaseConfig);
-*/
 //flames logic
 function flames() {
- var fname=document.getElementById("name1").value;
- var sname=document.getElementById("name2").value;
- var r=/\s+/g;
- var d= '<button onclick=again()>Try another one !</button><br>';
- var fr=fname.replace(r,"");
- var flen=fr.length; /*console.log(flen+fr);*/
- var sr=sname.replace(r,"");
- var slen=sr.length; /*console.log(slen+sr);*/ 
- var i,j,n,p=0;
- /*empty variable*/
-  var result = "result";
-/*ends here*/
-    if((fr=="" || sr=="") || (fr=="" && sr==""))
-    {
-        alert("No names have been entered");
-    }
-	else if(fr==sr)
-		{
-		alert("Same name has been entered");
-		}
-    else 
-    {
-	for(i=0;i<flen;i++)
-	{
-		for(j=0;j<slen;j++)
-		{
-			if(fr.charAt(i)==sr.charAt(j))
-			{
-				p++;
-		}
-		}
-		if(p!=0)
-		{
-			p++;
-		}
+	// Get the values of the two names
+	var fname = document.getElementById("name1").value.trim().toLowerCase();
+	var sname = document.getElementById("name2").value.trim().toLowerCase();
+  
+	// Validate the inputs
+	if (fname == "" || sname == "") {
+	  alert("No names have been entered");
+	  return;
+	} else if (fname == sname) {
+	  alert("Same name has been entered");
+	  return;
+	} else if (!/^[a-z]+$/i.test(fname) || !/^[a-z]+$/i.test(sname)) {
+	  alert("Only alphabetic characters are allowed");
+	  return;
 	}
-	for(n=0;n<flen;n++)
-	{
-		if(fr.charAt(0)==sr.charAt(n))
-		{
-			p++;
+  
+	// Calculate the number of common letters
+	var p = commonLetters(fname, sname);
+  
+	// Define an array of outcomes and images
+	var outcomes = [
+	  ["FRIENDS", "img/friends.png"],
+	  ["LOVERS", "img/lovers.png"],
+	  ["AFFECTIONATE", "img/affectionate.jpg"],
+	  ["MARRIAGE", "img/marriage.jpg"],
+	  ["ENEMY", "img/enemy.gif"],
+	  ["SISTER", "img/sister.jpg"],
+	];
+  
+	// Get the index of the outcome based on the remainder of p divided by 6
+	var index = p % 6;
+  
+	// Get the outcome and image from the array
+	var result = outcomes[index][0];
+	var image = outcomes[index][1];
+  
+	// Display the result and image
+	document.getElementById("print").innerHTML =
+	  '<button onclick=again()>Try another one !</button><br>' +
+	  "<p class=" +
+	  result[0] +
+	  ">" +
+	  result +
+	  "</p><br>" +
+	  '<img src="' +
+	  image +
+	  '" width="460" height="345">';
+  }
+  
+  // A function that compares two strings and returns the number of common letters
+  function commonLetters(str1, str2) {
+	var count = 0;
+	for (var i = 0; i < str1.length; i++) {
+	  if (str2.includes(str1[i])) {
+		count++;
+		// Remove the matched letter from str2 to avoid duplicates
+		str2 = str2.replace(str1[i], "");
+	  }
 	}
-	}
-    }
-	switch(p%6)
-	{
-		case 1 : document.getElementById("print").innerHTML = d+'<p class="fr">FRIENDS</p><br>'+'<img  src="img/friends.png" width="460" height="345">';
-				result = "FRIENDS";
-			break;
-		case 2: document.getElementById("print").innerHTML = d+'<p class="lo">LOVERS</p><br>'+'<img src="img/lovers.png" width="460" height="345">';
-				result = "LOVERS";
-			break;
-		case 3: document.getElementById("print").innerHTML = d+'<p class="af">AFFECTIONATE</p><br>'+'<img src="img/affectionate.jpg" width="460" height="345">';
-				result = "AFFECTIONATE";
-			break;
-		case 4: document.getElementById("print").innerHTML = d+'<p class="mr">MARRIAGE</p><br>'+'<img src="img/marriage.jpg" width="460" height="345">';
-				result = "MARRIAGE";
-			break;
-		case 5: document.getElementById("print").innerHTML = d+'<p class="em">ENEMY</p><br>'+'<img src="img/enemy.gif" width="460" height="345">';
-				result = "ENEMY";
-			break;
-		case 6: document.getElementById("print").innerHTML = d+'<p class="si">SISTER</p><br>'+'<img src="img/sister.jpg" width="460" height="345">';
-				result = "SISTER";
-			break;
-	}
-
-	 //firebase function
-	 /*
-	 function writeData(fname,sname,result){
-		firebase.database().ref('lovers/').push({
-			firstname: fname,
-			secondname: sname,
-			flames_result : result
-		});
-	}
-	writeData(fname,sname,result);
-	*/
-}
+	return count;
+  }
+  
 
 //Reload function
 function again() {
