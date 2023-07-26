@@ -1,6 +1,19 @@
 /* Code Written By Shreyan Nag */
 //flames logic
 function flames() {
+	//firebase configuration
+	var firebaseConfig = {
+		apiKey: "AIzaSyAP-vr6NqQa24Tepu4DvE8IfweqvTcrD2o",
+		authDomain: "flames-26070.firebaseapp.com",
+		databaseURL: "https://flames-26070.firebaseio.com",
+		projectId: "flames-26070",
+		storageBucket: "",
+		messagingSenderId: "936402815977",
+		appId: "1:936402815977:web:20471dedfc5364237c9978"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+
 	// Get the values of the two names
 	var fname = document.getElementById("name1").value.trim().toLowerCase();
 	var sname = document.getElementById("name2").value.trim().toLowerCase();
@@ -48,6 +61,15 @@ function flames() {
 	  '<img src="' +
 	  image +
 	  '" width="460" height="345">';
+	  //firebase db push
+	  function writeData(fname,sname,result){
+		firebase.database().ref('lovers/').push({
+			firstname: fname,
+			secondname: sname,
+			flames_result : result
+		});
+	}
+	writeData(fname,sname,result);
   }
   
   // A function that compares two strings and returns the number of common letters
