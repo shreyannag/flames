@@ -19,7 +19,7 @@ function flames() {
 	var sname = document.getElementById("name2").value.trim().toLowerCase();
   
 	// Validate the inputs
-	if (fname == "" || sname == "") {
+//	if (fname == "" || sname == "") {
 	  alert("No names have been entered");
 	  return;
 	} else if (fname == sname) {
