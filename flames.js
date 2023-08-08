@@ -16,7 +16,7 @@ function flames() {
 
 	// Get the values of the two names
 	//var fname = document.getElementById("name1").value.trim().toLowerCase();
-	var sname = document.getElementById("name2").value.trim().toLowerCase();
+	//var sname = document.getElementById("name2").value.trim().toLowerCase();
   
 	// Validate the inputs
 //	if (fname == "" || sname == "") {
