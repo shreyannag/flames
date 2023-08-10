@@ -15,11 +15,11 @@ function flames() {
 	  firebase.initializeApp(firebaseConfig);
 
 	// Get the values of the two names
-	var fname = document.getElementById("name1").value.trim().toLowerCase();
- var sname = document.getElementById("name2").value.trim().toLowerCase();
+	//var fname = document.getElementById("name1").value.trim().toLowerCase();
+ //var sname = document.getElementById("name2").value.trim().toLowerCase();
   
 	// Validate the inputs
-	if (fname == "" || sname == "") {
+	//if (fname == "" || sname == "") {
 	  alert("No names have been entered");
 	  return;
 	} else if (fname == sname) {
