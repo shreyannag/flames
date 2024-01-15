@@ -94,6 +94,8 @@ location.reload(false);
 //User form layout
 document.getElementById('flames_magic').innerHTML = '<p>Your Name</p><input type="text" id="name1"><br><p>Your Crush Name</p><input type="text" id="name2"><br><button onclick=flames()>FLAMES !</button><p id="print"></p>';
 */
+/*
 //Display Info
 console.log("%cFLAMES Game Version3.0 \nUpdated On 26th July 2023","color: red; font-family: sans-serif; font-size: 2.1em; font-weight: bolder; text-shadow: #000 1px 1px;");
 console.log("%cDeveloped by Shreyan Nag","color: #6872CB; font-family: sans-serif; font-size: 2.1em; font-weight:bolder; text-shadow: #6C6D75 1px 1px;");
+*/
