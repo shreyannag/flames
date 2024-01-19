@@ -42,7 +42,7 @@ var sname = document.getElementById("name2").value.trim().toLowerCase();
 	  ["ENEMY", "img/enemy.gif"],
 	  ["SISTER", "img/sister.jpg"],
 	];
- /*
+
 	// Get the index of the outcome based on the remainder of p divided by 6
 	var index = p % 6;
   
@@ -95,4 +95,3 @@ document.getElementById('flames_magic').innerHTML = '<p>Your Name</p><input type
 //Display Info
 console.log("%cFLAMES Game Version3.0 \nUpdated On 26th July 2023","color: red; font-family: sans-serif; font-size: 2.1em; font-weight: bolder; text-shadow: #000 1px 1px;");
 console.log("%cDeveloped by Shreyan Nag","color: #6872CB; font-family: sans-serif; font-size: 2.1em; font-weight:bolder; text-shadow: #6C6D75 1px 1px;");
-*/
