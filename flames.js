@@ -29,7 +29,7 @@ var sname = document.getElementById("name2").value.trim().toLowerCase();
 	  alert("Only alphabetic characters are allowed");
 	  return;
 	}
-  /*
+
 	// Calculate the number of common letters
 	var p = commonLetters(fname, sname);
   
@@ -95,4 +95,3 @@ document.getElementById('flames_magic').innerHTML = '<p>Your Name</p><input type
 //Display Info
 console.log("%cFLAMES Game Version3.0 \nUpdated On 26th July 2023","color: red; font-family: sans-serif; font-size: 2.1em; font-weight: bolder; text-shadow: #000 1px 1px;");
 console.log("%cDeveloped by Shreyan Nag","color: #6872CB; font-family: sans-serif; font-size: 2.1em; font-weight:bolder; text-shadow: #6C6D75 1px 1px;");
-*/
